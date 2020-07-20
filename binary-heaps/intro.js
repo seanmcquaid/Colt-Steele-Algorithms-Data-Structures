@@ -12,3 +12,6 @@
 
 // why do we need to know this?
 // commonly used to implement priority queue
+
+// Priority Queue - DS where each element has a priority
+// Elements with higher priorities are served before elements with lower priorities
