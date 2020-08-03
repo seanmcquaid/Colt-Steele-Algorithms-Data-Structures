@@ -17,8 +17,9 @@
 
 function hash(string, lengthOfArray){
     let total = 0;
-    for(let char of string){
+    for(let i = 0; i < Math.min(string.length, 100); i++){
         // this will map each letter to the corresponding position in the alphabet
+        let char = string[i];
         let value = char.charCodeAt(0) - 96;
         total = (total + value) % lengthOfArray;
     }
