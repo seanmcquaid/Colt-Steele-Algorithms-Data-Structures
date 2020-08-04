@@ -17,3 +17,15 @@
 // Directed - represented with arrows - polarity with each edge - one way connections
 // Weighted - has value for each edge
 // Unweighted - has no value for each edge
+
+class Graph {
+    constructor(){
+        this.adjacencyList = {};
+    }
+
+    addVertex(vertex){
+        if(!this.adjacencyList[vertex]){
+            this.adjacencyList[vertex] = [];
+        }
+    }
+}
