@@ -28,6 +28,14 @@
 // label vertex as discovered
 // for each vertex of neighbors, push onto stack
 
+// BFS - visit same level of neighbors
+// function should accept starting vertex
+// create a queue and place the starting vertex in it
+// create an array to store the nodes visited
+// create an object to store nodes visited
+// mark the starting vertex as visited
+// loop as long as there is anything in the queue
+
 class Graph {
     constructor(){
         this.adjacencyList = {};
@@ -99,6 +107,26 @@ class Graph {
                 if(!visited[neighbor]){
                     visited[neighbor] = true;
                     stack.push(neighbor);
+                }
+            });
+        }
+
+        return result;
+    }
+
+    breadthFirstSearch(start){
+        const queue = [start];
+        const result = [];
+        const visited = {};
+
+        while(queue.length){
+            let currentVertex = queue.shift();
+            result.push(currentVertex);
+
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                    visited[neighbor] = true;
+                    queu.push(neighbor);
                 }
             });
         }
