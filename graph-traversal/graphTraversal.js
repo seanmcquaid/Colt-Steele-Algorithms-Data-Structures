@@ -18,6 +18,16 @@
 // if neighbor is not visited
 // recursively call dfs on neighbor
 
+// Iterative DFS
+// Let S be a stack
+// s.push(start)
+// while s is not empty
+// vertex = s.pop()
+// if vertex is not labeled as discovered : 
+// visit vertex and add to result list
+// label vertex as discovered
+// for each vertex of neighbors, push onto stack
+
 class Graph {
     constructor(){
         this.adjacencyList = {};
@@ -63,7 +73,7 @@ class Graph {
 
             adjacencyList[vertex].forEach(neighbor => {
                 if(!visited[neighbor]){
-                    return depthFirstRecursive(neighbor);
+                    return dfs(neighbor);
                 }
             });
 
