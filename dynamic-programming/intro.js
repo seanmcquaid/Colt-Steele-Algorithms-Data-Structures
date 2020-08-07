@@ -56,3 +56,26 @@
 // Overlapping subproblems is the second essential part of dynamic programming 
 // Greedy Algorithms are a more aggressive and not always efficient way of solving algorithms
 // Backtracking is quite useful when solving for restrictive conditions with unknown possibilities
+
+// Fibonacci recursive solution
+
+function fib(n){
+    if(n <= 2) return 1;
+    return fib(n - 1) + fib(n - 2);
+}
+
+// Memoization solution
+
+function fibMemo(n, memo=[]){
+    if(memo[n] !== undefined){
+        return memo[n];
+    }
+
+    if(n <= 2){
+        return 1;
+    }
+
+    const res = fib(n-1, memo) + fib(n-2, memo);
+    memo[n] = res;
+    return res;
+}
